@@ -1,0 +1,102 @@
+$def with(message)
+$var privilege: -1
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("/static/files/cyber-monday-shopping-sales.jpg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 45;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-image: url("/static/files/cyber-monday-shopping-sales.jpg");
+        }
+        }
+
+        #sesion{
+            position: absolute;
+            width: 580px;
+            height: 345px;
+            left: 443px;
+            top: 70px;
+
+            background: #F9F9F9;
+            border: 2px solid #F9F9F9;
+            box-sizing: border-box;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 15px;
+        }
+
+        h3 {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+
+        #ingresar{
+            position: center;
+            width: 240px;
+            height: 50px;
+            text-align: center;
+
+            background: #43A6EE;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            color: #43A6EE
+        }
+
+        #boton_ingresar {
+            position: center;
+            width: 240px;
+            height: 50px;
+            left: 793px;
+            top: 685px;
+
+            font-family: Didact Gothic;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 30px;
+            line-height: 39px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #F9F9F9;
+        }
+    </style>
+</head>
+
+<body >
+$if message != None:
+    <div class="alert alert-danger">
+	<strong>Error:</strong> $message
+    </div>
+<div>
+<form action="" method="post" enctype="multipart/form-data" id="sesion">
+    <div class="form-group"> 
+    <h2 id="h2" style="color:#46CAEA">Inicio de sesion</h2>
+            <label style="color:#456583">Correo:</label>
+            <input required id="email" type="email" class="form-control" name="email" size="30" 
+            style="border-color:#456583"/>
+    </div>
+    <div class="form-group">
+            <label  style="color:#456583">Contraseña:</label>
+            <input required id="password" type="password" class="form-control" name="password" size="30" style="border-color:#456583"/>
+    </div>
+    <div class="form-group">
+        <label><input type="radio" name="privilege" value=1 checked></label>
+            <label style="color:#456583" align-text="center">¿Recordar Contraseña?</label>
+    </div>
+    <div class="form-group" id="ingresar">
+            <label></label>
+            <button id="Login" id="boton_ingresar" name="Login" class="form-control" style="background-color:#43A6EE" position="center"> Ingresar</button>
+    </div>
+</form>
+</div>
+</body>
